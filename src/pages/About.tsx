@@ -28,9 +28,11 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
             {/* Photo */}
             <div className="md:col-span-2">
-              <div className="bg-muted rounded-2xl aspect-square flex items-center justify-center">
-                <span className="text-muted-foreground text-lg">Alan's Photo</span>
-              </div>
+              <img
+                src="/images/leenane-road.jpg"
+                alt="Scenic road to Leenane, County Galway, Ireland"
+                className="rounded-2xl aspect-square object-cover w-full"
+              />
             </div>
 
             {/* Bio */}
