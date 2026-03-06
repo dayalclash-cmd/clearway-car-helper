@@ -16,8 +16,8 @@ const Home = () => {
 
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-center justify-center bg-secondary">
-        <div className="absolute inset-0 bg-[url('/images/family-car-keys-hero.png')] bg-cover bg-center" role="img" aria-label="Happy family receiving car hire keys" />
-        <div className="absolute inset-0 bg-secondary/60" />
+        <div className="absolute inset-0 bg-[url('/images/family-car-keys-hero.png')] bg-cover bg-center bg-no-repeat" role="img" aria-label="Happy family receiving car hire keys" />
+        <div className="absolute inset-0 bg-secondary/50" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6 text-center pt-20">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary-foreground mb-6">
             Expert Car Hire Advice for Your Trip to Ireland
