@@ -12,12 +12,14 @@ const Services = () => {
       />
 
       {/* Page Header */}
-      <section className="pt-28 md:pt-36 pb-16 md:pb-20 px-4 md:px-6 lg:px-8 bg-muted">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4">
+      <section className="relative pt-28 md:pt-36 pb-16 md:pb-20 px-4 md:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/achill-beach.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-secondary/70" />
+        <div className="relative max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary-foreground mb-4">
             Services & Fees
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto">
             Choose the level of service that's right for you. All packages are charged per booking with no hidden extras.
           </p>
         </div>

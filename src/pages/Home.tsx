@@ -15,9 +15,9 @@ const Home = () => {
       />
 
       {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-20" role="img" aria-label="Car driving through scenic Irish countryside" />
-        <div className="absolute inset-0 bg-secondary/50" />
+      <section className="relative min-h-[80vh] flex items-center justify-center bg-secondary">
+        <div className="absolute inset-0 bg-[url('/images/hero-kerry.jpg')] bg-cover bg-center" role="img" aria-label="Car driving through scenic Irish countryside" />
+        <div className="absolute inset-0 bg-secondary/60" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6 text-center pt-20">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary-foreground mb-6">
             Expert Car Hire Advice for Your Trip to Ireland
@@ -160,9 +160,11 @@ const Home = () => {
       <section className="py-16 md:py-24 px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="bg-muted rounded-2xl aspect-square md:aspect-[4/5] flex items-center justify-center">
-              <span className="text-muted-foreground text-lg">Alan's Photo</span>
-            </div>
+            <img
+              src="/images/family-car-keys.png"
+              alt="Happy family receiving car hire keys in Ireland"
+              className="rounded-2xl aspect-square md:aspect-[4/5] object-cover w-full"
+            />
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">About Us</h2>
               <p className="text-base text-muted-foreground leading-relaxed mb-4">
