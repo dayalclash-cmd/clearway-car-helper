@@ -11,7 +11,7 @@ const Footer = () => {
             <img
               src="/logo.png"
               alt="Clearway Car Hire logo"
-              className="h-10 w-auto mb-4"
+              className="h-14 w-auto mb-4"
             />
             <p className="text-sm leading-relaxed text-gray-500">
               Independent car hire consultancy in Ireland. Honest advice, clear pricing, personal service.
