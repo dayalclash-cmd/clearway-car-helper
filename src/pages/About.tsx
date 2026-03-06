@@ -11,7 +11,9 @@ const About = () => {
       />
 
       {/* Page Header */}
-      <section className="pt-28 md:pt-36 pb-16 md:pb-20 px-4 md:px-6 lg:px-8 bg-muted">
+      <section className="relative pt-28 md:pt-36 pb-16 md:pb-20 px-4 md:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/clew-bay.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-secondary/70" />
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4">
             About Us
