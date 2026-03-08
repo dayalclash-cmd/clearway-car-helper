@@ -7,9 +7,7 @@ const CTABanner = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
           Ready to Find Your Perfect Car Hire?
         </h2>
-        <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-          Get in touch today for a free, no-obligation quote.
-        </p>
+
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="mailto:alan@clearwaycarhire.ie"
@@ -19,7 +17,7 @@ const CTABanner = () => {
             Email Us
           </a>
           <a
-            href="tel:+353879769694"
+            href="tel:+353892559729"
             className="inline-flex items-center gap-2 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold py-3 px-8 rounded-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-foreground/30"
           >
             <Phone className="w-5 h-5" />

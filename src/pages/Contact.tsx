@@ -53,7 +53,7 @@ const Contact = () => {
 
                 {/* Phone Card */}
                 <a
-                  href="tel:+353879769694"
+                  href="tel:+353892559729"
                   className="flex items-start gap-4 p-6 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow duration-300"
                 >
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary-light shrink-0">
@@ -61,7 +61,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-1">Call Us</h3>
-                    <p className="text-muted-foreground">00353 87 9769694</p>
+                    <p className="text-muted-foreground">00353 89 2559729</p>
                   </div>
                 </a>
               </div>

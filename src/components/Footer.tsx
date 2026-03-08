@@ -53,11 +53,11 @@ const Footer = () => {
                 alan@clearwaycarhire.ie
               </a>
               <a
-                href="tel:+353879769694"
+                href="tel:+353892559729"
                 className="flex items-center gap-2 text-sm hover:text-primary transition-colors duration-300"
               >
                 <Phone className="w-4 h-4 text-primary" />
-                00353 87 9769694
+                00353 89 2559729
               </a>
             </div>
           </div>

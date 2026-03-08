@@ -103,8 +103,8 @@ const Privacy = () => {
               alan@clearwaycarhire.ie
             </a><br />
             Phone:{" "}
-            <a href="tel:+353879769694" className="text-primary hover:text-primary-dark transition-colors duration-300">
-              00353 87 9769694
+            <a href="tel:+353892559729" className="text-primary hover:text-primary-dark transition-colors duration-300">
+              00353 89 2559729
             </a>
           </p>
 
