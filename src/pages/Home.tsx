@@ -4,8 +4,11 @@ import SEO from "@/components/SEO";
 import TrustItem from "@/components/TrustItem";
 import PricingCard from "@/components/PricingCard";
 import CTABanner from "@/components/CTABanner";
+import { useSiteData } from "@/context/SiteDataContext";
 
 const Home = () => {
+  const { packages, siteSettings } = useSiteData();
+
   return (
     <>
       <SEO
@@ -27,14 +30,14 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:alan@clearwaycarhire.ie"
+              href={`mailto:${siteSettings.email}`}
               className="inline-flex items-center gap-2 bg-primary-foreground text-primary hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-foreground/30"
             >
               <Mail className="w-5 h-5" />
               Email Us
             </a>
             <a
-              href="tel:+353892559729"
+              href={`tel:${siteSettings.phone}`}
               className="inline-flex items-center gap-2 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold py-3 px-8 rounded-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-foreground/30"
             >
               <Phone className="w-5 h-5" />
@@ -110,48 +113,24 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-            <PricingCard
-              name="The Atlantic"
-              price="€14.99"
-              description="Our entry-level service helps you find the best car hire options in Ireland quickly and without the hassle of searching multiple websites."
-              details="Simply tell us your travel dates and pickup location, and we will search trusted Irish rental providers to find suitable options for your trip. We'll send you a shortlist of reliable rental choices, helping you avoid hidden fees and poor-quality providers."
-              disclaimer="You complete the booking directly with the rental provider."
-            />
-            <PricingCard
-              name="The Celtic"
-              price="€24.99"
-              includes={[
-                "Everything in The Atlantic",
-                "Comparison of multiple trusted rental providers",
-                "Expert advice on vehicle type, insurance options, and rental conditions",
-                "Help choosing the best value option for your trip",
-              ]}
-              description="Avoid costly mistakes and hidden charges with guidance from someone who understands the Irish car hire market."
-              disclaimer="You complete the booking directly with the rental provider."
-            />
-            <PricingCard
-              name="The Emerald"
-              price="€49"
-              badge="Recommended"
-              isHighlighted
-              description="A personalised service for customers who want expert assistance before and during their car hire in Ireland."
-              includesLabel="Includes:"
-              includes={[
-                "Everything in The Celtic package",
-                "We arrange your car hire booking for you",
-                "Priority assistance when organising your rental",
-                "Help sourcing premium or specialist vehicles",
-              ]}
-              supportLabel="Support during your rental:"
-              supportItems={[
-                "Assistance with vehicle questions",
-                "Help if any issues arise with your rental",
-                "Support contacting the rental provider",
-                "General guidance during your hire period",
-              ]}
-              valueAdd="Enjoy peace of mind knowing you have independent support throughout your rental in Ireland."
-              disclaimer="Bookings are completed directly with the selected rental provider."
-            />
+            {packages.map((pkg) => (
+              <PricingCard
+                key={pkg.id}
+                name={pkg.name}
+                price={pkg.price}
+                perBooking={pkg.perBooking}
+                badge={pkg.badge}
+                isHighlighted={pkg.isHighlighted}
+                description={pkg.description}
+                details={pkg.details}
+                includes={pkg.includes}
+                includesLabel={pkg.includesLabel}
+                supportItems={pkg.supportItems}
+                supportLabel={pkg.supportLabel}
+                valueAdd={pkg.valueAdd}
+                disclaimer={pkg.disclaimer}
+              />
+            ))}
           </div>
         </div>
       </section>

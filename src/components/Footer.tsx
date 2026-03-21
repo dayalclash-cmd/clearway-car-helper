@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
+import { useSiteData } from "@/context/SiteDataContext";
 
 const Footer = () => {
+  const { siteSettings } = useSiteData();
+
   return (
     <footer className="bg-secondary-dark text-gray-300 no-print">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
@@ -14,7 +17,7 @@ const Footer = () => {
               className="h-14 w-auto mb-4"
             />
             <p className="text-sm leading-relaxed text-gray-500">
-              Independent car hire consultancy in Ireland. Honest advice, clear pricing, personal service.
+              {siteSettings.tagline}
             </p>
           </div>
 
@@ -46,18 +49,18 @@ const Footer = () => {
             <h3 className="text-primary-foreground font-semibold mb-4">Contact Us</h3>
             <div className="space-y-3">
               <a
-                href="mailto:alan@clearwaycarhire.ie"
+                href={`mailto:${siteSettings.email}`}
                 className="flex items-center gap-2 text-sm hover:text-primary transition-colors duration-300"
               >
                 <Mail className="w-4 h-4 text-primary" />
-                alan@clearwaycarhire.ie
+                {siteSettings.email}
               </a>
               <a
-                href="tel:+353892559729"
+                href={`tel:${siteSettings.phone}`}
                 className="flex items-center gap-2 text-sm hover:text-primary transition-colors duration-300"
               >
                 <Phone className="w-4 h-4 text-primary" />
-                00353 89 2559729
+                {siteSettings.phoneDisplay}
               </a>
             </div>
           </div>
@@ -66,7 +69,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-500">
-            © 2025 Clearway Car Hire. All rights reserved.
+            © {new Date().getFullYear()} {siteSettings.businessName}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link
@@ -80,6 +83,12 @@ const Footer = () => {
               className="text-sm text-gray-500 hover:text-primary transition-colors duration-300"
             >
               Privacy Policy
+            </Link>
+            <Link
+              to="/admin/login"
+              className="text-sm text-gray-500 hover:text-primary transition-colors duration-300"
+            >
+              Admin Portal
             </Link>
           </div>
         </div>

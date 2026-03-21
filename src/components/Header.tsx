@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Mail, Phone, Menu, X } from "lucide-react";
+import { useSiteData } from "@/context/SiteDataContext";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -14,6 +15,7 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { siteSettings } = useSiteData();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -62,7 +64,7 @@ const Header = () => {
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+353892559729"
+              href={`tel:${siteSettings.phone}`}
               className="inline-flex items-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold py-2 px-4 rounded-lg transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-label="Call us"
             >
@@ -70,7 +72,7 @@ const Header = () => {
               Call Us
             </a>
             <a
-              href="mailto:alan@clearwaycarhire.ie"
+              href={`mailto:${siteSettings.email}`}
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-primary-foreground font-semibold py-2 px-4 rounded-lg transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-label="Email us"
             >
@@ -111,14 +113,14 @@ const Header = () => {
           ))}
           <div className="flex flex-col gap-3 pt-4 border-t border-gray-700 mt-4">
             <a
-              href="tel:+353892559729"
+              href={`tel:${siteSettings.phone}`}
               className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-all duration-300"
             >
               <Phone className="w-4 h-4" />
               Call Us
             </a>
             <a
-              href="mailto:alan@clearwaycarhire.ie"
+              href={`mailto:${siteSettings.email}`}
               className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-all duration-300"
             >
               <Mail className="w-4 h-4" />

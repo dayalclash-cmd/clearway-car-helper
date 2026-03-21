@@ -1,8 +1,11 @@
 import { Mail, Phone } from "lucide-react";
 import SEO from "@/components/SEO";
 import ContactForm from "@/components/ContactForm";
+import { useSiteData } from "@/context/SiteDataContext";
 
 const Contact = () => {
+  const { siteSettings } = useSiteData();
+
   return (
     <>
       <SEO
@@ -39,7 +42,7 @@ const Contact = () => {
               <div className="space-y-4">
                 {/* Email Card */}
                 <a
-                  href="mailto:alan@clearwaycarhire.ie"
+                  href={`mailto:${siteSettings.email}`}
                   className="flex items-start gap-4 p-6 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow duration-300"
                 >
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary-light shrink-0">
@@ -47,13 +50,13 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-1">Email Us</h3>
-                    <p className="text-muted-foreground">alan@clearwaycarhire.ie</p>
+                    <p className="text-muted-foreground">{siteSettings.email}</p>
                   </div>
                 </a>
 
                 {/* Phone Card */}
                 <a
-                  href="tel:+353892559729"
+                  href={`tel:${siteSettings.phone}`}
                   className="flex items-start gap-4 p-6 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow duration-300"
                 >
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary-light shrink-0">
@@ -61,7 +64,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground mb-1">Call Us</h3>
-                    <p className="text-muted-foreground">00353 89 2559729</p>
+                    <p className="text-muted-foreground">{siteSettings.phoneDisplay}</p>
                   </div>
                 </a>
               </div>
