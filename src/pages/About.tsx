@@ -49,7 +49,7 @@ const About = () => {
                 Too often, people are left dealing with confusing options, hidden costs, or impersonal systems. My goal is to offer a straightforward, honest service where you deal with a real person who actually cares about getting it right.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                With a strong focus on customer service, reliability, and clear communication, we work closely with trusted providers to find the best solution for each customer's needs.
+                With a strong focus on customer service, reliability, and clear communication, we offer independent advice to help customers find the best car hire option for their needs.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mb-4">
                 Our experience allows us to spot issues before they arise and guide customers toward the right choice, whether you're booking well in advance or need help at short notice.

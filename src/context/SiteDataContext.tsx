@@ -92,7 +92,7 @@ async function saveSiteData(data: {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer clearway2025`,
+        Authorization: `Bearer Tellico78*`,
       },
       body: JSON.stringify(data),
     });

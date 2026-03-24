@@ -4,7 +4,7 @@ interface Env {
 
 const PACKAGES_KEY = "packages";
 const SETTINGS_KEY = "siteSettings";
-const ADMIN_PASSWORD = "clearway2025";
+const ADMIN_PASSWORD = "Tellico78*";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

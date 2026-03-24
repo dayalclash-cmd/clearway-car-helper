@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Lock, Eye, EyeOff } from "lucide-react";
 
-const ADMIN_PASSWORD = "clearway2025";
+const ADMIN_PASSWORD = "Tellico78*";
 
 const AdminLogin = () => {
   const [password, setPassword] = useState("");
