@@ -41,7 +41,7 @@ const Header = () => {
             <img
               src="/logo.png"
               alt="Clearway Car Hire logo"
-              className="w-[200px] sm:w-[260px] md:w-[320px] lg:w-[380px] h-auto object-contain mix-blend-lighten"
+              className="w-[240px] md:w-[300px] lg:w-[360px] h-16 md:h-20 lg:h-24 object-cover object-center border-none"
             />
           </Link>
 
