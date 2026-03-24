@@ -66,6 +66,42 @@ const DEFAULT_SITE_SETTINGS: SiteSettings = {
     "Independent car hire consultancy in Ireland. Honest advice, clear pricing, personal service.",
 };
 
+/* ──────────────────────── API helpers ────────────────────────────── */
+
+const API_URL = "/api/site-data";
+
+async function fetchSiteData(): Promise<{
+  packages: Package[] | null;
+  siteSettings: SiteSettings | null;
+}> {
+  try {
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error("API error");
+    return await res.json();
+  } catch {
+    return { packages: null, siteSettings: null };
+  }
+}
+
+async function saveSiteData(data: {
+  packages?: Package[];
+  siteSettings?: SiteSettings;
+}): Promise<boolean> {
+  try {
+    const res = await fetch(API_URL, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer clearway2025`,
+      },
+      body: JSON.stringify(data),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
 /* ──────────────────────────── context ───────────────────────────── */
 
 interface SiteDataContextValue {
@@ -76,62 +112,70 @@ interface SiteDataContextValue {
   deletePackage: (id: string) => void;
   reorderPackages: (packages: Package[]) => void;
   updateSiteSettings: (settings: SiteSettings) => void;
+  isLoading: boolean;
 }
 
 const SiteDataContext = createContext<SiteDataContextValue | undefined>(
   undefined
 );
 
-const STORAGE_KEY_PACKAGES = "clearway_packages";
-const STORAGE_KEY_SETTINGS = "clearway_site_settings";
-
-function loadFromStorage<T>(key: string, fallback: T): T {
-  try {
-    const raw = localStorage.getItem(key);
-    if (raw) return JSON.parse(raw) as T;
-  } catch {
-    /* corrupted data — use defaults */
-  }
-  return fallback;
-}
-
 export const SiteDataProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [packages, setPackages] = useState<Package[]>(() =>
-    loadFromStorage(STORAGE_KEY_PACKAGES, DEFAULT_PACKAGES)
-  );
-  const [siteSettings, setSiteSettings] = useState<SiteSettings>(() =>
-    loadFromStorage(STORAGE_KEY_SETTINGS, DEFAULT_SITE_SETTINGS)
-  );
+  const [packages, setPackages] = useState<Package[]>(DEFAULT_PACKAGES);
+  const [siteSettings, setSiteSettings] =
+    useState<SiteSettings>(DEFAULT_SITE_SETTINGS);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Persist on every change
+  // On mount: fetch latest data from KV via API
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY_PACKAGES, JSON.stringify(packages));
-  }, [packages]);
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY_SETTINGS, JSON.stringify(siteSettings));
-  }, [siteSettings]);
-
-  const updatePackage = useCallback((pkg: Package) => {
-    setPackages((prev) => prev.map((p) => (p.id === pkg.id ? pkg : p)));
+    fetchSiteData().then((data) => {
+      if (data.packages) setPackages(data.packages);
+      if (data.siteSettings) setSiteSettings(data.siteSettings);
+      setIsLoading(false);
+    });
   }, []);
 
-  const addPackage = useCallback((pkg: Package) => {
-    setPackages((prev) => [...prev, pkg]);
+  // Helper: persist packages to KV
+  const persistPackages = useCallback((newPackages: Package[]) => {
+    setPackages(newPackages);
+    saveSiteData({ packages: newPackages });
   }, []);
 
-  const deletePackage = useCallback((id: string) => {
-    setPackages((prev) => prev.filter((p) => p.id !== id));
-  }, []);
+  const updatePackage = useCallback(
+    (pkg: Package) => {
+      const updated = packages.map((p) => (p.id === pkg.id ? pkg : p));
+      persistPackages(updated);
+    },
+    [packages, persistPackages]
+  );
 
-  const reorderPackages = useCallback((newOrder: Package[]) => {
-    setPackages(newOrder);
-  }, []);
+  const addPackage = useCallback(
+    (pkg: Package) => {
+      const updated = [...packages, pkg];
+      persistPackages(updated);
+    },
+    [packages, persistPackages]
+  );
+
+  const deletePackage = useCallback(
+    (id: string) => {
+      const updated = packages.filter((p) => p.id !== id);
+      persistPackages(updated);
+    },
+    [packages, persistPackages]
+  );
+
+  const reorderPackages = useCallback(
+    (newOrder: Package[]) => {
+      persistPackages(newOrder);
+    },
+    [persistPackages]
+  );
 
   const updateSiteSettings = useCallback((settings: SiteSettings) => {
     setSiteSettings(settings);
+    saveSiteData({ siteSettings: settings });
   }, []);
 
   return (
@@ -144,6 +188,7 @@ export const SiteDataProvider: React.FC<{ children: React.ReactNode }> = ({
         deletePackage,
         reorderPackages,
         updateSiteSettings,
+        isLoading,
       }}
     >
       {children}

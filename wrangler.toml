@@ -1,0 +1,7 @@
+name = "clearway-car-helper"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "dist"
+
+[[kv_namespaces]]
+binding = "SITE_DATA"
+id = "6f54027801bd4d808af68b8f05374429"
