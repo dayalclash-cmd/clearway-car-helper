@@ -79,6 +79,37 @@ const AdminSiteSettings = () => {
 
       {/* Settings Form */}
       <div className="max-w-2xl space-y-6">
+        {/* Maintenance Mode */}
+        <div className={`border rounded-xl p-6 transition-colors ${form.maintenanceMode ? 'bg-amber-950/30 border-amber-600/50' : 'bg-slate-900/50 border-slate-800'}`}>
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-lg font-semibold text-white flex items-center gap-2">
+                🔧 Maintenance Mode
+              </h2>
+              <p className="text-sm text-slate-400 mt-1">
+                When enabled, all visitors will see a "We'll Be Right Back" page. Admin panel remains accessible.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                update("maintenanceMode", !form.maintenanceMode);
+              }}
+              className={`relative inline-flex h-7 w-14 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 ${form.maintenanceMode ? 'bg-amber-500 focus:ring-amber-500' : 'bg-slate-700 focus:ring-slate-500'}`}
+            >
+              <span
+                className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition-transform duration-300 ${form.maintenanceMode ? 'translate-x-8' : 'translate-x-1'}`}
+              />
+            </button>
+          </div>
+          {form.maintenanceMode && (
+            <div className="mt-3 flex items-center gap-2 text-amber-400 text-sm font-medium">
+              <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+              Website is currently in maintenance mode
+            </div>
+          )}
+        </div>
+
         {/* Contact Information */}
         <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-6">
           <h2 className="text-lg font-semibold text-white mb-4">

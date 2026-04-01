@@ -21,4 +21,5 @@ export interface SiteSettings {
   phoneDisplay: string;
   businessName: string;
   tagline: string;
+  maintenanceMode?: boolean;
 }
