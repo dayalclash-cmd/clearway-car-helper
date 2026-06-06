@@ -12,9 +12,9 @@ const Footer = () => {
           {/* Column 1: Logo & Tagline */}
           <div>
             <img
-              src="/logo.png"
+              src="/new-logo.png"
               alt="Clearway Car Hire logo"
-              className="h-14 w-auto mb-4"
+              className="h-14 w-14 rounded-full mb-4"
             />
             <p className="text-sm leading-relaxed text-gray-500">
               {siteSettings.tagline}

@@ -12,7 +12,7 @@ const HowItWorks = () => {
       />
 
       {/* Page Header */}
-      <section className="relative pt-28 md:pt-36 pb-16 md:pb-20 px-4 md:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-24 md:pt-28 pb-16 md:pb-20 px-4 md:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/galway-road.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-secondary/70" />
         <div className="relative max-w-7xl mx-auto text-center">
@@ -31,17 +31,17 @@ const HowItWorks = () => {
           <StepCard
             number={1}
             heading="Get in touch"
-            description="Email me with your car hire requirements — dates, location, car type, and anything else that matters to you. No forms, no jargon, no pressure."
+            description="Email us with your car hire requirements — dates, location, car type, and anything else that matters to you. No forms, no jargon, no pressure."
           />
           <StepCard
             number={2}
-            heading="I do the searching for you"
-            description="I compare options from trusted car hire providers across Ireland and find the best deal based on your needs — not just the cheapest price, but the right coverage, fuel policy, and terms."
+            heading="We do the searching for you"
+            description="We compare options from trusted car hire providers across Ireland and find the best deal based on your needs — not just the cheapest price, but the right coverage, fuel policy, and terms."
           />
           <StepCard
             number={3}
             heading="Clear, honest advice"
-            description="I explain exactly what's included in plain English:"
+            description="We explain exactly what's included:"
             subList={[
               "Insurance & excess",
               "Deposits",
@@ -53,13 +53,13 @@ const HowItWorks = () => {
           />
           <StepCard
             number={4}
-            heading="Ask me anything (seriously)"
-            description="Have a question? Unsure about insurance? Never hired a car before? You can contact me as often as you like — even for the simplest queries. You're dealing with a real person who's happy to help."
+            heading="Ask us anything (seriously)"
+            description="Have a question? Unsure about insurance? Never hired a car before? You can contact us as often as you like — even for the simplest queries. You're dealing with a real person who's happy to help."
           />
           <StepCard
             number={5}
             heading="Collect your car with confidence"
-            description="When you turn up to collect your hire car, there are no surprises. You know the deal, the terms, and exactly what you're getting — so you can get on the road without stress."
+            description="When you turn up to collect your hire car, there are no surprises. You know the deal, the terms, and exactly what you're getting — enjoy a stress-free journey knowing we are there to support you along the way."
           />
         </div>
       </section>

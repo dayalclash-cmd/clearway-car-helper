@@ -23,10 +23,16 @@ const Home = () => {
         <div className="absolute inset-0 bg-secondary/50" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6 text-center pt-20">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary-foreground mb-6">
-            Expert Car Hire Advice for Your Trip to Ireland
+            Need Expert Car Hire Advice for Your Trip to Ireland?
           </h1>
+          <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-2">
+            At Clearway Car Hire, we take the stress out of hiring a car in Ireland by sourcing the perfect rental to suit your needs.
+          </p>
+          <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-2">
+            No hidden fees. No confusion. No hassle at the desk.
+          </p>
           <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8">
-            We take the stress out of hiring a car in Ireland. Get honest, independent advice and find the right rental — with no hidden fees, no confusion, and no pressure. Just get in touch and we'll do the rest.
+            Simply get in touch and we'll do the rest.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
@@ -58,13 +64,13 @@ const Home = () => {
             />
             <TrustItem
               icon={MessageCircle}
-              heading="Real Person, Real Help"
-              description="Talk to Alan directly — no bots, no call centres."
+              heading="Real People, Real Support"
+              description="Talk to us directly — no bots, no call centres."
             />
             <TrustItem
               icon={ShieldCheck}
               heading="No Hidden Fees"
-              description="Transparent pricing. You'll know exactly what you're paying."
+              description="Transparent pricing. Know exactly what you're paying for."
             />
           </div>
         </div>
@@ -79,9 +85,9 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {[
-              { num: 1, title: "Get in touch", desc: "Email me with your car hire requirements — dates, location, car type, and anything else that matters to you." },
-              { num: 3, title: "Clear, honest advice", desc: "I explain exactly what's included in plain English — insurance, deposits, fuel policy, mileage, and any extras." },
-              { num: 5, title: "Collect your car with confidence", desc: "No surprises at the rental desk. You know the deal, the terms, and exactly what you're getting." },
+              { num: 1, title: "Get in touch", desc: "Email us with your car hire requirements — dates, location, car type, and anything else that matters to you." },
+              { num: 3, title: "Clear, honest advice", desc: "We explain exactly what's included — insurance, deposits, fuel policy, mileage, and any extras." },
+              { num: 5, title: "Collect your car with confidence", desc: "When you turn up to collect your hire car, there are no surprises. You know the deal, the terms, and exactly what you're getting — enjoy a stress-free journey knowing we are there to support you along the way." },
             ].map((step) => (
               <div key={step.num} className="text-center p-6 rounded-2xl bg-muted">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-lg mb-4">
@@ -146,14 +152,20 @@ const Home = () => {
             />
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">About Us</h2>
-              <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                Hi, I'm Alan — and I believe booking a service shouldn't be complicated.
+              <p className="text-base text-muted-foreground leading-relaxed text-justify mb-4">
+                Hi, I'm Alan — and I believe hiring a car in Ireland shouldn't be complicated.
               </p>
-              <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                With over 20 years' experience in the car hire industry, I started this business to make things simpler, clearer, and more personal for customers.
+              <p className="text-base text-muted-foreground leading-relaxed text-justify mb-4">
+                After two decades working in the Irish car hire industry, I started this business to make things simpler, clearer, and more personal to customers.
               </p>
-              <p className="text-base text-muted-foreground leading-relaxed mb-6">
-                Too often, people are left dealing with confusing options, hidden costs, or impersonal systems. My goal is to offer a straightforward, honest service where you deal with a real person who actually cares about getting it right.
+              <p className="text-base text-muted-foreground leading-relaxed text-justify mb-4">
+                Too often, people are left dealing with confusing options, hidden costs, or impersonal systems. Clearway Car Hire offers a straightforward, honest service where you deal with a real person who actually cares about getting it right.
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed text-justify mb-4">
+                Whether you're booking well in advance or need help at short notice, we can guide you towards making the right choice.
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed text-justify mb-6">
+                Any questions, just ask. I'm always happy to help.
               </p>
               <Link
                 to="/about"

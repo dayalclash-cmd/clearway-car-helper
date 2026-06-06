@@ -35,14 +35,18 @@ const Header = () => {
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-28 md:h-36">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center" aria-label="Clearway Car Hire — Home">
+          <Link to="/" className="flex items-center gap-3" aria-label="Clearway Car Hire — Home">
             <img
-              src="/logo.png"
+              src="/new-logo.png"
               alt="Clearway Car Hire logo"
-              className="w-[240px] md:w-[300px] lg:w-[360px] h-16 md:h-20 lg:h-24 object-cover object-center border-none"
+              className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full object-cover"
             />
+            <div className="flex flex-col">
+              <span className="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-wide">Clearway Car Hire</span>
+              <span className="text-white/90 text-xs md:text-sm font-light tracking-wide">Honest advice, clear pricing, personal service.</span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

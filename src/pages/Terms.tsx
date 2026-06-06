@@ -9,7 +9,7 @@ const Terms = () => {
         path="/terms"
       />
 
-      <section className="pt-28 md:pt-36 pb-16 md:pb-24 px-4 md:px-6 lg:px-8">
+      <section className="pt-24 md:pt-28 pb-16 md:pb-24 px-4 md:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-8">
             Terms & Conditions

@@ -11,7 +11,7 @@ const About = () => {
       />
 
       {/* Page Header */}
-      <section className="relative pt-28 md:pt-36 pb-16 md:pb-20 px-4 md:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-24 md:pt-28 pb-16 md:pb-20 px-4 md:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/clew-bay.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-secondary/70" />
         <div className="relative max-w-7xl mx-auto text-center">
@@ -39,26 +39,20 @@ const About = () => {
 
             {/* Bio */}
             <div className="md:col-span-3">
-              <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                Hi, I'm Alan — and I believe booking a service shouldn't be complicated.
+              <p className="text-base text-muted-foreground leading-relaxed text-justify mb-4">
+                Hi, I'm Alan — and I believe hiring a car in Ireland shouldn't be complicated.
               </p>
-              <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                With over 20 years' experience in the car hire industry, I started this business to make things simpler, clearer, and more personal for customers.
+              <p className="text-base text-muted-foreground leading-relaxed text-justify mb-4">
+                After two decades working in the Irish car hire industry, I started this business to make things simpler, clearer, and more personal to customers.
               </p>
-              <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                Too often, people are left dealing with confusing options, hidden costs, or impersonal systems. My goal is to offer a straightforward, honest service where you deal with a real person who actually cares about getting it right.
+              <p className="text-base text-muted-foreground leading-relaxed text-justify mb-4">
+                Too often, people are left dealing with confusing options, hidden costs, or impersonal systems. Clearway Car Hire offers a straightforward, honest service where you deal with a real person who actually cares about getting it right.
               </p>
-              <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                With a strong focus on customer service, reliability, and clear communication, we offer independent advice to help customers find the best car hire option for their needs.
+              <p className="text-base text-muted-foreground leading-relaxed text-justify mb-4">
+                Whether you're booking well in advance or need help at short notice, we can guide you towards making the right choice.
               </p>
-              <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                Our experience allows us to spot issues before they arise and guide customers toward the right choice, whether you're booking well in advance or need help at short notice.
-              </p>
-              <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                This business is built on trust, transparency, and word-of-mouth — and I treat every booking as if it were my own.
-              </p>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                If you ever have a question, just ask. I'm always happy to help.
+              <p className="text-base text-muted-foreground leading-relaxed text-justify">
+                Any questions, just ask. I'm always happy to help.
               </p>
             </div>
           </div>
